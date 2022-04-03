@@ -3,7 +3,6 @@ from collections import Counter
 file1 = open('d3.txt', 'r')
 task_input = [line.replace("\n", "").strip() for line in file1.readlines()]
 
-
 def count_bits(lines):
     counts = []
     for letter_idx in range(len(lines[0])):
@@ -32,13 +31,12 @@ def calculate_min_bit_values(lines):
             result += "0"
     return result
 
-
-def bin_to_decimal(binary):
-    return int(binary, 2)
-
+def bin_to_decimal(bin):
+    return int(bin, 2)
 
 gamma = calculate_max_bit_values(task_input)
 epsilon = calculate_min_bit_values(task_input)
+
 print("Part 1 result is " + str(bin_to_decimal(gamma) * bin_to_decimal(epsilon)))
 
 
@@ -53,6 +51,8 @@ def calculate_rating(rating_candidates, bit_calculating_function):
     return rating_candidates[0]
 
 
+
 oxygen_rating = calculate_rating(task_input, calculate_max_bit_values)
 co2_scrubber_rating = calculate_rating(task_input, calculate_min_bit_values)
-print("part 2 result is " + str(bin_to_decimal(oxygen_rating) * bin_to_decimal(co2_scrubber_rating)))
+print("part 2 result is " + str(bin_to_decimal(oxygen_rating) * bin_to_decimal(co2_scrubber_rating))
+# 7928162
